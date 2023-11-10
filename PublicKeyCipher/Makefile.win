@@ -1,0 +1,46 @@
+# Project: PublicKeyCipher
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = DH.o ElGamal.o isPrime.o main.o ModExp.o RSA.o is_primitive_root.o
+LINKOBJ  = DH.o ElGamal.o isPrime.o main.o ModExp.o RSA.o is_primitive_root.o
+LIBS     = -L"E:/mingw64/x86_64-w64-mingw32/lib" -L"E:/OpenSSL-Win64/lib" -llibcrypto
+INCS     = -I"E:/mingw64/x86_64-w64-mingw32/include" -I"E:/OpenSSL-Win64/include"
+CXXINCS  = -I"E:/mingw64/x86_64-w64-mingw32/include" -I"E:/OpenSSL-Win64/include"
+BIN      = PublicKeyCipher.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+DH.o: DH.c
+	$(CC) -c DH.c -o DH.o $(CFLAGS)
+
+ElGamal.o: ElGamal.c
+	$(CC) -c ElGamal.c -o ElGamal.o $(CFLAGS)
+
+isPrime.o: isPrime.c
+	$(CC) -c isPrime.c -o isPrime.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+ModExp.o: ModExp.c
+	$(CC) -c ModExp.c -o ModExp.o $(CFLAGS)
+
+RSA.o: RSA.c
+	$(CC) -c RSA.c -o RSA.o $(CFLAGS)
+
+is_primitive_root.o: is_primitive_root.c
+	$(CC) -c is_primitive_root.c -o is_primitive_root.o $(CFLAGS)
