@@ -1,0 +1,153 @@
+# 这是 git 的忽略文件，将那些不需要跟踪的文件模式列在下面。
+# 每行一个模式，目录后面加斜杠。默认情况下，对所有子目录起作用。井号开始的注释改行。
+# 特别是编译系统自动生成的文件或目录一定要忽略掉。
+# 子目录也可以使用该文件，子目录忽略格式与上层目录忽略模式合并，并且子目录优先级高于上层目录。
+# 下面只是部分忽略类型。你可以增加自己的忽略文件（如果要忽略某个特定文件，直接写该文件名）
+# 更多详细信息，可以参考 Git 手册，或命令行输入： git help ignore 查看帮助。
+#
+# 不同编译环境下的忽略文件模板可以参看： https://github.com/github/gitignore
+#
+*.zip
+*.jar
+*.pch
+*.obj
+*.pdf
+*.bak
+~*.doc
+~*.docx
+*.class
+lib/
+bin/
+build/
+[Dd]dbug/
+
+# c
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# c++
+# Prerequisites
+*.d
+
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# java
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+
+# python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
