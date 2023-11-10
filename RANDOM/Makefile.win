@@ -1,0 +1,61 @@
+# Project: RANDOM
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o autocorrelation_test.o calculateHash.o cursor_distribution_test.o findDuplicateFiles.o hash.o linear_shift_register.o LSR_test.o RC4.o single_bit_frequency_test.o swap.o traverseDirectory.o
+LINKOBJ  = main.o autocorrelation_test.o calculateHash.o cursor_distribution_test.o findDuplicateFiles.o hash.o linear_shift_register.o LSR_test.o RC4.o single_bit_frequency_test.o swap.o traverseDirectory.o
+LIBS     = -L"E:/mingw64/x86_64-w64-mingw32/lib" -L"E:/OpenSSL-Win64/lib" -llibcrypto
+INCS     = -I"E:/mingw64/x86_64-w64-mingw32/include" -I"E:/OpenSSL-Win64/include"
+CXXINCS  = -I"E:/mingw64/x86_64-w64-mingw32/include" -I"E:/OpenSSL-Win64/include"
+BIN      = RANDOM.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+autocorrelation_test.o: autocorrelation_test.c
+	$(CC) -c autocorrelation_test.c -o autocorrelation_test.o $(CFLAGS)
+
+calculateHash.o: calculateHash.c
+	$(CC) -c calculateHash.c -o calculateHash.o $(CFLAGS)
+
+cursor_distribution_test.o: cursor_distribution_test.c
+	$(CC) -c cursor_distribution_test.c -o cursor_distribution_test.o $(CFLAGS)
+
+findDuplicateFiles.o: findDuplicateFiles.c
+	$(CC) -c findDuplicateFiles.c -o findDuplicateFiles.o $(CFLAGS)
+
+hash.o: hash.c
+	$(CC) -c hash.c -o hash.o $(CFLAGS)
+
+linear_shift_register.o: linear_shift_register.c
+	$(CC) -c linear_shift_register.c -o linear_shift_register.o $(CFLAGS)
+
+LSR_test.o: LSR_test.c
+	$(CC) -c LSR_test.c -o LSR_test.o $(CFLAGS)
+
+RC4.o: RC4.c
+	$(CC) -c RC4.c -o RC4.o $(CFLAGS)
+
+single_bit_frequency_test.o: single_bit_frequency_test.c
+	$(CC) -c single_bit_frequency_test.c -o single_bit_frequency_test.o $(CFLAGS)
+
+swap.o: swap.c
+	$(CC) -c swap.c -o swap.o $(CFLAGS)
+
+traverseDirectory.o: traverseDirectory.c
+	$(CC) -c traverseDirectory.c -o traverseDirectory.o $(CFLAGS)
